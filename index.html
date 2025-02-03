@@ -78,7 +78,7 @@
 						<h2>Diverse Opportunities<br /></h2>
 						<p>From emerging industries to established markets, we strategically allocate assets across sectors like real estate, cryptocurrency, and equity to create a balanced approach to growth. In addition to financial returns, our investors benefit from exclusive insights, access to innovative projects, and the opportunity to contribute to a company shaping the future of investment.</p>
 						<ul class="actions">
-							<li><a href="ventures.html" class="button special">EXPLORE OUR VENTURES</a></li>
+							<li><a href="ventures.html" class="button special">EXPLORE OUR VENTURES →</a></li>
 						</ul>
 					</div>
 				</section>
@@ -88,7 +88,7 @@
 						<h2>Stakeholder Commitment<br /></h2>
 						<p>We are dedicated to prioritizing the financial well-being of our stakeholders by fostering an environment of trust, collaboration, and shared success. As we grow, we remain steadfast in our commitment to creating shared success through strategic and ethical investments.</p>
 						<ul class="actions">
-							<li><a href="ethics.html" class="button special">OUR ETHICS GUIDELINES</a></li>
+							<li><a href="ethics.html" class="button special">OUR ETHICS GUIDELINES →</a></li>
 						</ul>
 					</div>
 				</section>
@@ -103,28 +103,49 @@
 							Start Your Journey with Inva Capital Markets.
 						</p>
 						<ul class="actions">
-							<li><a href="enquiry.html" class="button special">Take the First Step</a></li>
+							<li><a href="enquiry.html" class="button special">Take the First Step →</a></li>
 						</ul>
+<p>Or Send us an email.
+						</p>
+
 					
 <!-- Contact Form -->
-						<form action="mailto:invacapitalmarkets@gmail.com" method="post" enctype="text/plain">
-							<div>
-								<label for="name">Name:</label>
-								<input type="text" id="name" name="name" required>
-							</div>
-							<div>
-								<label for="email">Email:</label>
-								<input type="email" id="email" name="email" required>
-							</div>
-							<div>
-								<label for="message">Message:</label>
-								<textarea id="message" name="message" rows="4" required></textarea>
-							</div>
-							<div>
-								<button type="submit">Send</button>
-							</div>
-						</form>
-						<!-- End of Contact Form -->
+<form id="contactForm" onsubmit="sendMail(); return false;">
+	<div>
+		<label for="name">Your Name:</label>
+		<input type="text" id="name" name="name" required>
+	</div>
+	<div>
+		<label for="email">Your Contact Email:</label>
+		<input type="email" id="email" name="email" required>
+	</div>
+	<div>
+		<label for="message">Your Message:</label>
+		<textarea id="message" name="message" rows="4" required></textarea>
+	</div>
+	<div>
+		<button type="submit">Send</button>
+	</div>
+</form>
+
+<script>
+function sendMail() {
+    // Retrieve field values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    
+    // Construct the email body with just the values on separate lines
+    var body = name + "\n" + email + "\n" + message;
+    
+    // Build the mailto link. Adjust the subject as needed.
+    var mailtoLink = "mailto:invacapitalmarkets@gmail.com?subject=" + encodeURIComponent("INVA Capital Markets Inquiry") + "&body=" + encodeURIComponent(body);
+    
+    // Redirect the browser to the mailto link
+    window.location.href = mailtoLink;
+}
+</script>
+<!-- End of Contact Form -->
 			</section>
 
 			<!-- Footer -->
