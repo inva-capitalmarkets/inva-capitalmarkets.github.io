@@ -54,24 +54,45 @@
 									<p>To open an Account or to clarify any investment-related inquiries,<br />
                                                       Contact us at <a href="mailto:invacapitalmarkets@gmail.com">invacapitalmarkets@gmail.com</a>,<br /> 
                                                                 </p><!-- Contact Form -->
-						<form action="mailto:invacapitalmarkets@gmail.com" method="post" enctype="text/plain">
-							<div>
-								<label for="name">Name:</label>
-								<input type="text" id="name" name="name" required>
-							</div>
-							<div>
-								<label for="email">Email:</label>
-								<input type="email" id="email" name="email" required>
-							</div>
-							<div>
-								<label for="message">Message:</label>
-								<textarea id="message" name="message" rows="4" required></textarea>
-							</div>
-							<div>
-								<button type="submit">Send</button>
-							</div>
-						</form>
-						<!-- End of Contact Form -->
+<form id="contactForm" onsubmit="sendMail(); return false;">
+	<div>
+		<label for="name">Your Name:</label>
+		<input type="text" id="name" name="name" required>
+	</div>
+	<div>
+		<label for="email">Your Contact Email:</label>
+		<input type="email" id="email" name="email" required>
+	</div>
+	<div>
+		<label for="message">Your Message:</label>
+		<textarea id="message" name="message" rows="4" required></textarea>
+	</div>
+	<div>
+		<button type="submit">Send</button>
+	</div>
+</form>
+
+<script>
+function sendMail() {
+    // Retrieve field values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    
+    // Construct the email body with just the values on separate lines
+    var body = name + "\n" + email + "\n" + message;
+    
+    // Build the mailto link. Adjust the subject as needed.
+    var mailtoLink = "mailto:invacapitalmarkets@gmail.com?subject=" + encodeURIComponent("Contact Form Submission") + "&body=" + encodeURIComponent(body);
+    
+    // Redirect the browser to the mailto link
+    window.location.href = mailtoLink;
+}
+</script>
+<!-- End of Contact Form -->
+
+
+
 				</div>
 						</section>
 					</article>					
