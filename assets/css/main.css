@@ -3812,3 +3812,25 @@
 	body.is-mobile.landing #footer {
 		background-color:  #1C1C1C;
 	}
+.video video {
+    max-width: 640px;
+    max-height: 480px;
+    width: 100%;
+    height: auto;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px; /* Ensures it doesn't go too large on big screens */
+    height: 315px; /* Default YouTube height */
+    aspect-ratio: 16 / 9;
+}
+
